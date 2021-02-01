@@ -1,8 +1,8 @@
 package com.digite.kata;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ParkingLot {
@@ -29,9 +29,8 @@ public class ParkingLot {
     }
 
     public int getNearestVacantSlot() {
-        Integer vacantSlot = -1;
+        int vacantSlot = -1;
 
-        Set<Integer> keys = slots.keySet();
         int counter = 0;
 
         while ( counter < slots.size() ) {
@@ -70,5 +69,17 @@ public class ParkingLot {
         }
 
         return slot;
+    }
+
+    public ArrayList<String> getRegistrationNumbersByColor(String Color) {
+        ArrayList<String> cars = new ArrayList<>();
+
+        return cars;
+    }
+
+    public ArrayList<Integer> getSlotNumbersByColor(String Color) {
+        ArrayList<Integer> slots = new ArrayList<>();
+
+        return slots;
     }
 }
