@@ -47,7 +47,7 @@ public class AppTest {
         parkingLot.park("KA-01-HH-1231", "White");
         int slotNum = parkingLot.getSlotNumberByRegistrationNumber("KA-01-HH-1231");
         parkingLot.leave(slotNum);
-        assertEquals(5, parkingLot.getStatus());
+        assertEquals(6, parkingLot.getStatus());
     }
 
 
