@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -68,7 +69,7 @@ public class AppTest {
     }
 
     @Test
-    public void testCarRegistrationNUmberOfSameColour() {
+    public void testCarRegistrationNumberOfSameColour() {
         parkingLot.park("KA-01-HH-1231", "White");
         parkingLot.park("KA-01-HH-1232", "Red");
         parkingLot.park("KA-01-HH-1233", "White");
@@ -77,12 +78,12 @@ public class AppTest {
         ArrayList<String> actual = parkingLot.getRegistrationNumbersByColor("White");
 
         assertEquals(2, actual.size());
-        assertEquals("KA-01-HH-1231", actual.get(0));
-        assertEquals("KA-01-HH-1233", actual.get(0));
+        assertTrue(actual.contains("KA-01-HH-1231"));
+        assertTrue(actual.contains("KA-01-HH-1233"));
     }
 
     @Test
-    public void testCarSlotNUmberOfSameColour() {
+    public void testCarSlotNumberOfSameColour() {
         parkingLot.park("KA-01-HH-1231", "White");
         parkingLot.park("KA-01-HH-1232", "Red");
         parkingLot.park("KA-01-HH-1233", "White");
@@ -91,7 +92,7 @@ public class AppTest {
         ArrayList<Integer> actual = parkingLot.getSlotNumbersByColor("White");
 
         assertEquals(2, actual.size());
-        assertEquals("KA-01-HH-1231", actual.get(0));
-        assertEquals("KA-01-HH-1233", actual.get(0));
+        assertTrue( actual.contains(1) );
+        assertTrue( actual.contains(3) );
     }
 }

@@ -74,12 +74,24 @@ public class ParkingLot {
     public ArrayList<String> getRegistrationNumbersByColor(String Color) {
         ArrayList<String> cars = new ArrayList<>();
 
+        slots.entrySet().stream().forEach( entry -> {
+            if ( Color.equals(entry.getValue().getColour()) ) {
+                cars.add(entry.getValue().getRegistrationNumber());
+            }
+        } );
+
         return cars;
     }
 
     public ArrayList<Integer> getSlotNumbersByColor(String Color) {
-        ArrayList<Integer> slots = new ArrayList<>();
+        ArrayList<Integer> cars = new ArrayList<>();
 
-        return slots;
+        slots.entrySet().stream().forEach( entry -> {
+            if ( Color.equals(entry.getValue().getColour()) ) {
+                cars.add(entry.getKey());
+            }
+        } );
+
+        return cars;
     }
 }
